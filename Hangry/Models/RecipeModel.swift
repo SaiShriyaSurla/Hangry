@@ -10,6 +10,13 @@ import Foundation
 enum Category: String{
     case breakfast = "Breakfast"
     case salads = "Salads"
+    case appetizers = "Appetizers"
+    case snacks = "Snacks "
+    case sides = "Sides"
+    case mains = "Mains"
+    case deserts = "Deserts"
+    case drinks = "Drinks"
+    
     
 }
 
@@ -20,7 +27,7 @@ struct Recipe: Identifiable {
     let description: String
     let ingredients: String
     let directons: String
-    let category: Category
+    let category: Category.RawValue //reading the string and not the case itself
     let datePublished: String
     let url: String
 }
