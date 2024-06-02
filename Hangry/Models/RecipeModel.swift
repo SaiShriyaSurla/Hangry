@@ -9,7 +9,8 @@ import Foundation
 
 enum Category: String{
     case breakfast = "Breakfast"
-    case 
+    case salads = "Salads"
+    
 }
 
 struct Recipe: Identifiable {
