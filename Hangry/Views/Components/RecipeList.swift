@@ -23,8 +23,12 @@ struct RecipeList: View {
             //grows vertically according to the number of items
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing:   15)],spacing: 15) {
                 ForEach(recipes) { recipe in
+                    NavigationLink(destination: RecipeView(recipe: recipe)){
+                        
+                        RecipeCard(recipe: recipe)
+                    }
                     
-                    RecipeCard(recipe: recipe)
+                    
                     
                 }
             }

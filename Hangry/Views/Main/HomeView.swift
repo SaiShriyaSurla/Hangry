@@ -14,7 +14,7 @@ struct HomeView: View {
                 
                 RecipeList(recipes: Recipe.all)
             }
-            .navigationTitle("My Recipes ")
+            .navigationTitle("My Recipes") //top of the screen
             
             }
         
