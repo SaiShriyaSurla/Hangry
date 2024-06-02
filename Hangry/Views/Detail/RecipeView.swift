@@ -1,10 +1,3 @@
-//
-//  RecipeView.swift
-//  Hangry
-//
-//  Created by Sai Shriya Surla on 02/06/2024.
-//
-
 import SwiftUI
 
 struct RecipeView: View {
@@ -27,44 +20,47 @@ struct RecipeView: View {
             .frame(height: 300)
             .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
             
-            VStack(spacing: 30) {
+            VStack(spacing: 20) {
                 Text(recipe.name)
                     .font(.largeTitle)
                     .bold()
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
+                    //.multilineTextAlignment(.center)
+                    .padding(.horizontal, 40)
                 
-                VStack(alignment: .leading, spacing: 30) {
-                    Text(recipe.description)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
-                    
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("Ingredients")
-                            .font(.headline)
-                            .bold()
-                            .padding(.horizontal)
-                        
-                        Text(recipe.ingredients)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal)
+                VStack(alignment: .leading, spacing: 20) {
+                    if !recipe.description.isEmpty {
+                        Text(recipe.description)
+                            .padding(.horizontal, 40)
                     }
                     
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("Directions")
-                            .font(.headline)
-                            .bold()
-                            .padding(.horizontal)
-                        
-                        Text(recipe.directons)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal)
+                    if !recipe.ingredients.isEmpty {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Ingredients")
+                                .font(.headline)
+                                .bold()
+                                .padding(.horizontal, 40)
+                            
+                            Text(recipe.ingredients)
+                                .padding(.horizontal, 40)
+                        }
+                    }
+                    
+                    if !recipe.directons.isEmpty {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Directions")
+                                .font(.headline)
+                                .bold()
+                                .padding(.horizontal, 40)
+                            
+                            Text(recipe.directons)
+                                .padding(.horizontal, 40)
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal) // Ensure padding for the entire VStack containing text
+                .padding(.horizontal)
             }
-            .padding(.horizontal) // Padding for the main VStack
+            .padding(.horizontal, 20)
         }
         .ignoresSafeArea(.container, edges: .top)
     }
