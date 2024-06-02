@@ -7,11 +7,12 @@
 
 import Foundation
 
-enum Category: String{
+enum Category: String, CaseIterable, Identifiable{
+    var id: String {self.rawValue}
     case breakfast = "Breakfast"
     case salads = "Salads"
     case appetizers = "Appetizers"
-    case snacks = "Snacks "
+    case snacks = "Snacks"
     case sides = "Sides"
     case mains = "Mains"
     case deserts = "Deserts"
