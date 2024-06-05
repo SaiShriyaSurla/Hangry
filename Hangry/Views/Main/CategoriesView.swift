@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CategoriesView: View {
+    @EnvironmentObject var recipesVM: RecipesViewModel
+    
     var body: some View {
         NavigationView {
             List {

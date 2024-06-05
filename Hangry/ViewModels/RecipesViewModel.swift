@@ -8,7 +8,7 @@
 //Making editing dynamic
 import Foundation
 
-class RecipesViewsModel: ObservableObject{
+class RecipesViewModel: ObservableObject{
     @Published private(set) var recipes : [Recipe] = []  //@Published announces to users when value has changed
     
     

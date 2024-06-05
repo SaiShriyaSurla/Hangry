@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AddRecipeView: View {
+    @EnvironmentObject var recipesVM: RecipesViewModel
+    
     @State private var name: String = ""
     @State private var selectedCategory: Category = .mains
     @State private var description: String = ""
@@ -59,7 +61,7 @@ struct AddRecipeView: View {
                 
                 ToolbarItem() {
                     NavigationLink(isActive: $navigateToRecipe) {
-                        RecipeView(recipe: Recipe.all.sorted{ $0.datePublished > $1.datePublished } [0])
+                        RecipeView(recipe: recipesVM.recipes.sorted{ $0.datePublished > $1.datePublished } [0])
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Button{
