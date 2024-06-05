@@ -14,6 +14,9 @@ struct AddRecipeView: View {
     @State private var ingredients: String = ""
     @State private var directions: String = ""
 
+    
+    @Environment(\.dismiss) var dismiss   //to exit the page with the cancel button
+    
     var body: some View {
         NavigationView {
             Form {
@@ -47,7 +50,7 @@ struct AddRecipeView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button{
-                        
+                        dismiss()
                     } label: {
                         Label("Cancel", systemImage: "xmark")
                     }
