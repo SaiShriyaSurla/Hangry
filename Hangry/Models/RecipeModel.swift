@@ -23,11 +23,11 @@ enum Category: String, CaseIterable, Identifiable{
 
 struct Recipe: Identifiable {
     let id = UUID() //random string identifier
-    let name: String
-    let image: String
-    let description: String
-    let ingredients: String
-    let directons: String
+    let name: String // string for name
+    let image: String // image of the recipe
+    let description: String // long string for description
+    let ingredients: String // long string for the ingredients
+    let directons: String // long string for directions
     let category: Category.RawValue //reading the string and not the case itself
     let datePublished: String
     let url: String
@@ -41,7 +41,7 @@ extension Recipe{
             image: "https://www.foodandwine.com/thmb/cMZecoM65AevIDFL4BC9bn0ZNGQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Aloo-Gobi-FT-RECIPE0623-d0555d951f26447cb2f2d99e00ccc660.jpg",
             description: "Aloo Gobi is a dry Indian dish made with potatoes (Aloo) and cauliflower (Gobi). It’s a simple yet flavorful dish that pairs well with roti or rice.",
             ingredients: "3 medium potatoes (peeled and cubed)\n1 medium cauliflower (cut into florets)\n1 large onion (finely chopped)\n2 tomatoes (finely chopped)\n1 tbsp ginger-garlic paste\n2 green chilies (sliced)\n1 tsp cumin seeds\n1 tsp turmeric powder\n1 tsp coriander powder\n1 tsp red chili powder\n1 tsp garam masala\nSalt to taste\nCilantro for garnish\nOil for cooking",
-            directons: "Heat oil in a pan and add cumin seeds. Once they splutter, add chopped onions and sauté until golden brown.\nAdd ginger-garlic paste and green chilies. Cook for a minute.\nAdd tomatoes and cook until the oil separates.\nAdd turmeric, coriander powder, red chili powder, and salt. Mix well.\nAdd potatoes and cauliflower. Mix well to coat the vegetables with the spices.\nCover and cook on low heat until the vegetables are tender.\nGarnish with garam masala and cilantro.\nServe hot with roti or rice.",
+            directons: "Heat oil in a pan and add cumin seeds. Once they splutter, add chopped onions and sauté until golden brown.\nAdd ginger-garlic paste and green chilies. \nCook for a minute.\nAdd tomatoes and cook until the oil separates.\nAdd turmeric, coriander powder, red chili powder, and salt. Mix well.\nAdd potatoes and cauliflower. Mix well to coat the vegetables with the spices.\nCover and cook on low heat until the vegetables are tender.\nGarnish with garam masala and cilantro.\nServe hot with roti or rice.",
             category: "Sides",
             datePublished: "15-07-2018",
             url: "https://www.youtube.com/watch?v=F6fYdLBB2U0"
